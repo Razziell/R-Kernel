@@ -1,0 +1,11 @@
+--- net/netfilter/nfnetlink.c	2011-08-01 08:56:32.716752934 -0700
++++ net/netfilter/nfnetlink.c	2011-08-01 08:57:56.212752965 -0700
+@@ -59,7 +59,7 @@
+ 		nfnl_unlock();
+ 		return -EBUSY;
+ 	}
+-	rcu_assign_pointer(subsys_table[n->subsys_id], n);
++	RCU_INIT_POINTER(subsys_table[n->subsys_id], n);
+ 	nfnl_unlock();
+ 
+ 	return 0;

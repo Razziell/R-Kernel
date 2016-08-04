@@ -1,0 +1,15 @@
+--- mm/page_alloc.c
++++ mm/page_alloc.c
+@@ -4761,10 +4761,8 @@
+ 								   usemapsize);
+ }
+ #else
+-static inline void setup_usemap(struct pglist_data *pgdat,
+-				struct zone *zone,
+-				unsigned long zone_start_pfn,
+-				unsigned long zonesize) {}
++static inline void setup_usemap(struct pglist_data *pgdat, struct zone *zone,
++				unsigned long zone_start_pfn, unsigned long zonesize) {}
+ #endif /* CONFIG_SPARSEMEM */
+ //qijiwen end
+ 
